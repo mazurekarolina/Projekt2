@@ -1,8 +1,9 @@
-from __future__ import unicode_literals # obsluga polskich znaków diaktrtycznych
+from __future__ import unicode_literals # obsluga polskich znakÃ³w diaktrtycznych
 import sys
 from PyQt5.QtWidgets import QDialog, QApplication
 from kalk_geod import * # import kodu pythona ze schematem GUI
 from transformacje import Transformacje
+import PyQt5.QtGui 
 
 class MyForm(QDialog):
     def __init__(self):
@@ -17,6 +18,7 @@ class MyForm(QDialog):
         self.ui.pl2000_str7.clicked.connect(self.check_s7)
         self.ui.pl2000_str8.clicked.connect(self.check_s8)
         self.strefa = 1
+        self.setWindowIcon(QtGui.QIcon('ikonka.png'))
         self.show()
 
     def policz_wgs84(self):
